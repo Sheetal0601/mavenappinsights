@@ -7,12 +7,15 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
+import com.microsoft.applicationinsights.attach.ApplicationInsights;
 
 @SpringBootApplication
 public class Application {
 
 	public static void main(String[] args) {
+		ApplicationInsights.attach();
 		SpringApplication.run(Application.class, args);
+
 	}
 
 	@Bean
