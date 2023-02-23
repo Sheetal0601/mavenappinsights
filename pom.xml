@@ -51,6 +51,36 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+
+			<plugin> 
+				<groupId>com.microsoft.azure</groupId>  
+				<artifactId>azure-webapp-maven-plugin</artifactId>  
+				<version>2.2.0</version>  
+				<configuration>
+				  <subscriptionId>459b2e1b-b62e-4ebb-8c9e-4cf82e4ff840</subscriptionId>
+				  <resourceGroup>AppService.Specialist.OSS.JavaLin.2</resourceGroup>
+				  <appName>appservicespecialistossjavalin2ghb7ysuqmosh2</appName>
+				  <pricingTier>B2</pricingTier>
+				  <region>southeast asia</region>
+				  <runtime>
+					<os>Linux</os>      
+					<webContainer>Java SE</webContainer>
+					<javaVersion>Java 11</javaVersion>
+				  </runtime>
+				  <deployment>
+					<resources>
+					  <resource>
+						<type>jar</type>
+						<directory>${project.basedir}/target</directory>
+						<includes>
+						  <include>*.jar</include>
+						</includes>
+					  </resource>
+					</resources>
+				  </deployment>
+				</configuration>
+			  </plugin> 
+			  
 		</plugins>
 	</build>
 
